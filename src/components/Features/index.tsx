@@ -4,21 +4,23 @@ import featuresData from "./featuresData";
 
 const Features = () => {
   return (
-    <section className="pb-8 pt-20 dark:bg-dark lg:pb-[70px] lg:pt-[120px]">
-      <div className="container">
-        <SectionTitle
-          subtitle="Features"
-          title="Main Features Of Play"
-          paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
-        />
+    <>
+      <section id="features" className="py-16 md:py-20 lg:py-28">
+        <div className="container">
+          <SectionTitle
+            title="Main Features"
+            paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+            center
+          />
 
-        <div className="-mx-4 mt-12 flex flex-wrap lg:mt-20">
-          {featuresData.map((feature, i) => (
-            <SingleFeature key={i} feature={feature} />
-          ))}
+          <div className="grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
+            {featuresData.map((feature) => (
+              <SingleFeature key={feature.id} feature={feature} />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

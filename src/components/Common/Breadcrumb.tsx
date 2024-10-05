@@ -2,50 +2,122 @@ import Link from "next/link";
 
 const Breadcrumb = ({
   pageName,
-  pageDescription,
+  description,
 }: {
   pageName: string;
-  pageDescription?: string;
+  description: string;
 }) => {
   return (
     <>
-      <div className="dark:bg-dark relative z-10 overflow-hidden pb-[60px] pt-[120px] md:pt-[130px] lg:pt-[160px]">
-        <div className="from-stroke/0 via-stroke to-stroke/0 dark:via-dark-3 absolute bottom-0 left-0 h-px w-full bg-gradient-to-r"></div>
+      <section className="relative z-10 overflow-hidden pt-28 lg:pt-[150px]">
         <div className="container">
           <div className="-mx-4 flex flex-wrap items-center">
-            <div className="w-full px-4">
-              <div className="text-center">
-                <h1 className="text-dark mb-4 text-3xl font-bold dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]">
+            <div className="w-full px-4 md:w-8/12 lg:w-7/12">
+              <div className="mb-8 max-w-[570px] md:mb-0 lg:mb-12">
+                <h1 className="mb-5 text-2xl font-bold text-black dark:text-white sm:text-3xl">
                   {pageName}
                 </h1>
-                <p className="text-body-color dark:text-dark-6 mb-5 text-base">
-                  {pageDescription}
+                <p className="text-base font-medium leading-relaxed text-body-color">
+                  {description}
                 </p>
-
-                <ul className="flex items-center justify-center gap-[10px]">
-                  <li>
+              </div>
+            </div>
+            <div className="w-full px-4 md:w-4/12 lg:w-5/12">
+              <div className="text-end">
+                <ul className="flex items-center md:justify-end">
+                  <li className="flex items-center">
                     <Link
                       href="/"
-                      className="text-dark flex items-center gap-[10px] text-base font-medium dark:text-white"
+                      className="pr-1 text-base font-medium text-body-color hover:text-primary"
                     >
                       Home
                     </Link>
+                    <span className="mr-3 block h-2 w-2 rotate-45 border-r-2 border-t-2 border-body-color"></span>
                   </li>
-                  <li>
-                    <p className="text-body-color flex items-center gap-[10px] text-base font-medium">
-                      <span className="text-body-color dark:text-dark-6">
-                        {" "}
-                        /{" "}
-                      </span>
-                      {pageName}
-                    </p>
+                  <li className="text-base font-medium text-primary">
+                    {pageName}
                   </li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
-      </div>
+
+        <div>
+          <span className="absolute left-0 top-0 z-[-1]">
+            <svg
+              width="287"
+              height="254"
+              viewBox="0 0 287 254"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                opacity="0.1"
+                d="M286.5 0.5L-14.5 254.5V69.5L286.5 0.5Z"
+                fill="url(#paint0_linear_111:578)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_111:578"
+                  x1="-40.5"
+                  y1="117"
+                  x2="301.926"
+                  y2="-97.1485"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="#4A6CF7" />
+                  <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <span className="absolute right-0 top-0 z-[-1]">
+            <svg
+              width="628"
+              height="258"
+              viewBox="0 0 628 258"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                opacity="0.1"
+                d="M669.125 257.002L345.875 31.9983L524.571 -15.8832L669.125 257.002Z"
+                fill="url(#paint0_linear_0:1)"
+              />
+              <path
+                opacity="0.1"
+                d="M0.0716344 182.78L101.988 -15.0769L142.154 81.4093L0.0716344 182.78Z"
+                fill="url(#paint1_linear_0:1)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_0:1"
+                  x1="644"
+                  y1="221"
+                  x2="429.946"
+                  y2="37.0429"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="#4A6CF7" />
+                  <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
+                </linearGradient>
+                <linearGradient
+                  id="paint1_linear_0:1"
+                  x1="18.3648"
+                  y1="166.016"
+                  x2="105.377"
+                  y2="32.3398"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="#4A6CF7" />
+                  <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+        </div>
+      </section>
     </>
   );
 };
