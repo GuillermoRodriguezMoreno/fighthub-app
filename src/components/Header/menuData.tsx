@@ -54,6 +54,12 @@ const menuData: Menu[] = [
         path: "/error",
         newTab: false,
       },
+      {
+        id: 49,
+        title: "Admin Page",
+        path: "/admin",
+        newTab: false,
+      },
     ],
   },
 ];
