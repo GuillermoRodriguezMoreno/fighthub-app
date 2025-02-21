@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import { PageResponseSchema } from './PageResponse';
 
-const UserSchema = z.object({
+export const UserSchema = z.object({
   id: z.number().optional(),
   firstname: z.string(),
   lastname: z.string(),

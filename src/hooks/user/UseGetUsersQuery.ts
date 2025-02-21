@@ -1,6 +1,6 @@
-import { getUsers } from "@/clients/userClient";
+import { getUsers } from "@/clients/UserClient";
 import { useQuery } from "@tanstack/react-query";
 
 export function UseGetUsersQuery() {
-  return useQuery({queryKey: ["users"], queryFn: async () => getUsers()});
+  return useQuery({queryKey: ["user"], queryFn: async () => getUsers()});
 }

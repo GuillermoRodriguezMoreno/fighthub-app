@@ -6,6 +6,6 @@ export const StyleSchema = z.object({
     name: z.string(),
 });
 
-export const StylePageResponseSchema = PageResponseSchema(StyleSchema);
 export type Style = z.infer<typeof StyleSchema>;
+export const StylePageResponseSchema = PageResponseSchema(StyleSchema);
 export type StylePageResponse = z.infer<typeof StylePageResponseSchema>;
