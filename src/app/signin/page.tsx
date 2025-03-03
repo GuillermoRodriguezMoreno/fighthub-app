@@ -1,12 +1,14 @@
+'use client';
 import Link from "next/link";
 
 import { Metadata } from "next";
+import { signIn } from "next-auth/react";
 
-export const metadata: Metadata = {
-  title: "Sign In Page | Free Next.js Template for Startup and SaaS",
-  description: "This is Sign In Page for Startup Nextjs Template",
-  // other metadata
-};
+// export const metadata: Metadata = {
+//   title: "Sign In Page | Free Next.js Template for Startup and SaaS",
+//   description: "This is Sign In Page for Startup Nextjs Template",
+//   // other metadata
+// };
 
 const SigninPage = () => {
   return (
@@ -153,7 +155,18 @@ const SigninPage = () => {
                     </div>
                   </div>
                   <div className="mb-6">
-                    <button className="shadow-submit dark:shadow-submit-dark flex w-full items-center justify-center rounded-sm bg-primary px-9 py-4 text-base font-medium text-white duration-300 hover:bg-primary/90">
+                    <button onClick={async () => {
+                      console.log("sign in");
+                      const result = await signIn("credentials", {
+                        email: "admin@fighthub.com",
+                        password: "admin123",
+                        redirect: false, // Evita redireccionar automáticamente
+                      });
+
+                      if (result?.error) {
+                        console.error("Error signing in:", result.error);
+                      }
+                    }} className="shadow-submit dark:shadow-submit-dark flex w-full items-center justify-center rounded-sm bg-primary px-9 py-4 text-base font-medium text-white duration-300 hover:bg-primary/90">
                       Sign in
                     </button>
                   </div>
@@ -225,6 +238,21 @@ const SigninPage = () => {
             </defs>
           </svg>
         </div>
+        <button onClick={async () => {
+                      console.log("sign in");
+                      const result = await signIn("credentials", {
+                        email: "admin@fighthub.com",
+                        password: "admin123",
+                        // redirect: false,
+                        // callbackUrl: "/",
+                      });
+
+                      if (result?.error) {
+                        console.error("Error signing in:", result.error);
+                      }
+                    }} className="shadow-submit dark:shadow-submit-dark flex w-full items-center justify-center rounded-sm bg-primary px-9 py-4 text-base font-medium text-white duration-300 hover:bg-primary/90">
+                      Sign in
+                    </button>
       </section>
     </>
   );
