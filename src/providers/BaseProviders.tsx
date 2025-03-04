@@ -12,13 +12,13 @@ const queryClient = new QueryClient()
 export function BaseProviders({ children }: { children: React.ReactNode }) {
   return (
     <SessionProvider>
-    <ConfigProvider>
-      <QueryClientProvider client={queryClient}>
-        <ThemeProvider attribute="class" enableSystem={false} defaultTheme="dark">
-          {children}
-        </ThemeProvider>
-      </QueryClientProvider>
-    </ConfigProvider>
+      <ConfigProvider>
+        <QueryClientProvider client={queryClient}>
+          <ThemeProvider attribute="class" enableSystem={false} defaultTheme="dark">
+            {children}
+          </ThemeProvider>
+        </QueryClientProvider>
+      </ConfigProvider>
     </SessionProvider>
   );
 }
